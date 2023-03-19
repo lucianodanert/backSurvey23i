@@ -1,4 +1,5 @@
 import { Router } from "express";
+import surveyValidate from "../middlewares/surveyValidations";
 import {
   showSurveys,
   createSurvey,
@@ -11,8 +12,11 @@ import {
 const router = Router();
 
 //Agregar rutas
-router.route("/").get(showSurveys).post(createSurvey);
+router
+  .route("/")
+  .get(showSurveys)
+  .post(surveyValidate,createSurvey);
 
-router.route("/:id").get(getOne).put(updateSurvey).delete(deleteOne);
+router.route("/:id").get(getOne).put(surveyValidate,updateSurvey).delete(deleteOne);
 
 export default router;

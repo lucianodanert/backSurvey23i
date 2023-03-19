@@ -15,6 +15,11 @@ const surveySchema = new Schema({
     maxlength: 10,
     unique: false,
   },
+  active: {
+    require: true,
+    type: Boolean,
+    unique: false,
+  },
 });
 
 const Survey = mongoose.model("survey", surveySchema);

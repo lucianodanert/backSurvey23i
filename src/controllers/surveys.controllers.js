@@ -1,4 +1,5 @@
 import Survey from "../models/surveys";
+import { validationResult } from "express-validator";
 
 const getOne = async (req, res) => {
   try {
@@ -23,7 +24,7 @@ const showSurveys = async (req, res) => {
 };
 
 const createSurvey = async (req, res) => {
-  const { surveyName, category } = req.body;
+  const { surveyName, category, active } = req.body;
   try {
     console.log(req.body);
     //validar
@@ -35,6 +36,7 @@ const createSurvey = async (req, res) => {
       category: req.body.category, */
       surveyName,
       category,
+      active,
     });
 
     //guardar en la BD
