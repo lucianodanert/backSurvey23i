@@ -12,14 +12,19 @@ const surveySchema = new Schema({
     require: true,
     type: String,
     minlength: 5,
-    maxlength: 10,
+    maxlength: 100,
     unique: false,
   },
   active: {
     require: true,
-    type: Boolean,
+    type: String,
     unique: false,
   },
+  surveyItemList: {
+    require: true,
+    type: Array,
+    unique: false,
+  }
 });
 
 const Survey = mongoose.model("survey", surveySchema);

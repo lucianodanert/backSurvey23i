@@ -24,7 +24,7 @@ const showSurveys = async (req, res) => {
 };
 
 const createSurvey = async (req, res) => {
-  const { surveyName, category, active } = req.body;
+  const { surveyName, category, active,surveyItemList } = req.body;
   try {
     console.log(req.body);
     //validar
@@ -37,6 +37,7 @@ const createSurvey = async (req, res) => {
       surveyName,
       category,
       active,
+      surveyItemList,
     });
 
     //guardar en la BD
