@@ -4,7 +4,9 @@ import cors from "cors";
 import path from "path";
 import "./database";
 import router from "./routes/surveys.routes";
-
+import auth from './routes/users.routes'
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 //crear la instancia de express
 const app = express();
@@ -23,16 +25,18 @@ app.listen(app.get("port"), () => {
   console.log("=====================================");
 });
 //middlewares
+dotenv.config()
 app.use(morgan("dev")); //nos da información de la consulta tipo status tiempo de ejecucion
 app.use(cors()); //no permite recibir peticiones remotas a nuestra API
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //generando rutas
 
-app.use(express.static("public"));
-//app.use(express.static(path.join(__dirname, "../public")))
+//app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "../public")))
 
 app.use("/apiSurveys", router);
+app.use('/apiSurveys/auth', auth)
 
 /* app.get("/", (req, res) => {
   res.send("Esta es una prueba desde mi backend");
