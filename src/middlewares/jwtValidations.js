@@ -2,10 +2,10 @@ import jwt from "jsonwebtoken";
 
 const validateJWT = (req, res, next) => {
   
-  const roken = req.header("x-access-token");
+  const token = req.header("x-access-token");
   if (!token) {
     
-    res.status(401).json({ message: "Need to send a token in the request" });
+    res.status(401).json({ message: "A token in the request is requiered to be sent" });
     
     try {
       const payload = jwt.verify(token, process.env.SECRET_JWT);
