@@ -40,6 +40,6 @@ npm run dev
 - nodemon
 ## Autores
 
-👤 **Mallorga, Yuliana + Danert, Luciano + Colombotto, Mariano + Pipke, Erick + Cruz, Juan**
+🧑‍🤝‍🧑💪 **Mallorga, Yuliana + Danert, Luciano + Colombotto, Mariano + Pipke, Erick + Cruz, Juan**
 
 * GitHub: [backSurvey23i](https://github.com/lucianodanert/backSurvey23i)
