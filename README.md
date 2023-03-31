@@ -1,5 +1,5 @@
 <h1 align="center">WorldSurveys - Backend</h1>
-<h2 align="center">Bienvenidos👋</h2>
+<h2 align="center">Bienvenidos!👋</h2>
 <hr>
 <p>
 
@@ -18,12 +18,14 @@
 ### 🌟 [Deploy del backend en Render con BD en MongoDB Atlas](https://crudburgersc23i.onrender.com/ )
 <br>
 
-## Install after clone
+## Comandos
+
+### Para instalar las dependecias después de clonar
 
 ```sh
 npm i
 ```
-## Usage
+### Para ejecutar nuestra API
 
 ```sh
 npm run dev
@@ -38,8 +40,15 @@ npm run dev
 - mongoose
 - morgan
 - nodemon
+
+<hr>
+
+## Repo
+* GitHub: [backSurvey23i](https://github.com/lucianodanert/backSurvey23i)
+
+<hr>
+
 ## Autores
 
 🧑‍🤝‍🧑💪 **Mallorga, Yuliana + Danert, Luciano + Colombotto, Mariano + Pipke, Erick + Cruz, Juan**
 
-* GitHub: [backSurvey23i](https://github.com/lucianodanert/backSurvey23i)
