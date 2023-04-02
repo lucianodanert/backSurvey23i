@@ -1,14 +1,14 @@
 import jwt from "jsonwebtoken";
 
-const generateJWT = (uid, userName) => {
+const generateJWT = (uid, username) => {
 
   return new Promise((resolve, reject) => {
 
-    const payload = { uid, userName };
+    const payload = { uid, username };
     jwt.sign(
       payload,
       process.env.SECRET_JWT,
-      { expiresIn: "15m" },
+      { expiresIn: "30m" },
       (err, token) => {
         if (err) {
           console.log(err);
@@ -20,6 +20,5 @@ const generateJWT = (uid, userName) => {
     );
   });
 };
-
 
 export default generateJWT

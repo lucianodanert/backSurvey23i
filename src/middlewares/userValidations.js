@@ -2,11 +2,11 @@ import { check } from "express-validator";
 import validationsResult from "../helpers/validationResults";
 
 const userValidations = [
-    check("name")
+    check("username")
     .notEmpty()
-    .withMessage("El nombre del usuario es obligatorio")
+    .withMessage("El nombre de usuario es obligatorio")
     .isLength({ min: 2, max: 100 })
-    .withMessage("El nombre del usuario debe tener entre 2 y 100 caracteres"),
+    .withMessage("El nombre de usuario debe tener entre 2 y 100 caracteres"),
     check("email")
     .notEmpty()
     .withMessage("El email es obligatorio")

@@ -6,14 +6,12 @@ import "./database";
 import router from "./routes/surveys.routes";
 import auth from './routes/users.routes'
 import * as dotenv from 'dotenv'
-dotenv.config()
 
 const app = express();
 
 console.log("Desde mi backend");
 
 app.set("port", process.env.PORT || 4000);
-
 
 app.listen(app.get("port"), () => {
   console.log("=====================================");
@@ -26,7 +24,6 @@ app.use(morgan("dev"));
 app.use(cors()); 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 
 app.use(express.static(path.join(__dirname, "../public")))
 

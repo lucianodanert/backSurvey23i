@@ -13,12 +13,13 @@ const login = async (req, res) => {
     const correctPassword = bcrypt.compareSync(password, user.password)
     if(!correctPassword) res.status(404).json ({ message: 'User email or password incorrect'})
 
-    const token = await generateJWT(user._id, user.name)
+    const token = await generateJWT(user._id, user.username)
 
     res.status(200).json({ 
         message: 'User email and password correct',
-        userName: user.name,
-        uid: user._id
+        userName: user.username,
+        uid: user._id,
+        token
     })
   } catch (error) {
     console.log(error);
@@ -27,9 +28,9 @@ const login = async (req, res) => {
 };
 
 const register = async (req, res) => {
-
+  
   try {
-    const { name, email, password } = req.body;
+    const { username, email, password } = req.body;
 
     const userFound = await User.findOne({ email });
 
@@ -41,12 +42,12 @@ const register = async (req, res) => {
     const SALT_ROUND = 10;
     createUser.password = await bcrypt.hash(password, SALT_ROUND);
 
-    const token = await generateJWT(createUser._id, createUser.name)
+    const token = await generateJWT(createUser._id, createUser.username)
 
     await createUser.save();
     res.status(200).json({
       message: "User successfully created",
-      userName: createUser.name,
+      userName: createUser.username,
       uid: createUser._id,
       token
     });
