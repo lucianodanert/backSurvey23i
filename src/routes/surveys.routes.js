@@ -13,12 +13,12 @@ const router = Router();
 router
   .route("/")
   .get(showSurveys)
-  .post(surveyValidate,createSurvey);
+  .post([validateJWT, surveyValidate],createSurvey);
 
 router
 .route("/:id")
 .get(getOne)
-.put(surveyValidate,updateSurvey)
-.delete(deleteOne);
+.put([validateJWT, surveyValidate],updateSurvey)
+.delete(validateJWT, deleteOne);
 
 export default router;
