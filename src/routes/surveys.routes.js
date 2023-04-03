@@ -7,6 +7,7 @@ import {
   updateSurvey,
   deleteOne,
 } from "../controllers/surveys.controllers";
+import validateJWT from "../middlewares/jwtValidations";
 
 const router = Router();
 
