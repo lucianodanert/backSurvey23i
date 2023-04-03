@@ -24,19 +24,24 @@ const showSurveys = async (req, res) => {
 };
 
 const createSurvey = async (req, res) => {
-  const { surveyName, category, active,surveyItemList } = req.body;
+  const { surveyName, category, status,surveyItemList,surveyAnswerList } = req.body;
   try {
     console.log(req.body);
     //validar
 
+    //crear un objeto para guardar en la BD
 
     const newSurvey = new Survey({
+      /* surveyName: req.body.surveyName,
+      category: req.body.category, */
       surveyName,
       category,
-      active,
+      status,
       surveyItemList,
+      surveyAnswerList,
     });
 
+    //guardar en la BD
     await newSurvey.save();
     res.status(201).json({ message: "Survey created succesfully" });
   } catch (error) {
@@ -63,5 +68,4 @@ const deleteOne = async (req, res) => {
     res.status(404).json({ message: "Error searching for requested survey" });
   }
 };
-
 export { showSurveys, createSurvey, getOne, updateSurvey, deleteOne };
