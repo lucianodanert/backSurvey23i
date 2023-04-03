@@ -4,12 +4,12 @@ const validateJWT = (req, res, next) => {
   
   const token = req.header("x-access-token");
   if (!token) {
-    res.status(401).json({ message: "A token in the request is requiered to be sent" });
+    res.status(401).json({ message: "A token in the request is required to be sent" });
     
     try {
       const payload = jwt.verify(token, process.env.SECRET_JWT);
       req.id = payload.uid;
-      req.username = payload.userName;
+      req.username = payload.username;
     } catch (error) {
       console.log(error);
       res
