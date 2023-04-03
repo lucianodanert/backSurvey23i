@@ -2,7 +2,7 @@ import { check } from "express-validator";
 import validationsResult from "../helpers/validationResults";
 
 const surveyValidate = [
-  check("surveyName", )
+  check("surveyName")
   .notEmpty()
   .withMessage("El nombre de la encuesta es obligatorio")
   .isLength({ min: 2, max: 100 })

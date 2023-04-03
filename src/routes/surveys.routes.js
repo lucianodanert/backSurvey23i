@@ -17,6 +17,6 @@ router
   .get(showSurveys)
   .post(surveyValidate,createSurvey);
 
-router.route("/:id").get(getOne).put(surveyValidate,updateSurvey).delete(deleteOne);
+router.route("/:id").get(getOne).put(updateSurvey).delete(deleteOne);
 
 export default router;
