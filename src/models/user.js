@@ -5,7 +5,6 @@ const userSchema = new Schema({
         type: String,
         maxlenght: 100,
         require: true,
-        unique: true
     },
     email: {
         type: String,
@@ -15,7 +14,20 @@ const userSchema = new Schema({
     },
     password: {
         type: String,
+        maxlenght: 100,
         require: true
+    },
+    img: {
+        type: String,
+        required: false,
+    },
+    role: {
+        type: String,
+        default: 'user_role',
+    },
+    estate: {
+        type: Boolean,
+        default: true,
     },
 });
 
