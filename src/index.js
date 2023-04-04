@@ -3,6 +3,8 @@ import morgan from "morgan";
 import cors from "cors";
 import path from "path";
 import "./database";
+import router from "./routes/surveys.routes";
+
 
 //crear la instancia de express
 const app = express();
@@ -28,14 +30,15 @@ app.use(express.urlencoded({ extended: true }));
 //generando rutas
 
 app.use(express.static("public"));
-app.use(express.static(path.join(__dirname, "../public")))
+//app.use(express.static(path.join(__dirname, "../public")))
 
+app.use("/apiSurveys", router);
 
-
-app.get("/", (req, res) => {
+/* app.get("/", (req, res) => {
   res.send("Esta es una prueba desde mi backend");
 });
 
 app.delete("/borrarProducto", (req, res) => {
   res.send("Se borró el producto");
 });
+ */
