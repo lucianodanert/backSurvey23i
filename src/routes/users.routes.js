@@ -11,6 +11,6 @@ router
   
 router
   .route("/register")
-  .post([validateJWT, userValidations], register)
+  .post(userValidations, register)
 
 export default router;
