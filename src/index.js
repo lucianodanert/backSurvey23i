@@ -4,6 +4,7 @@ import cors from "cors";
 import path from "path";
 import "./database";
 import router from "./routes/surveys.routes";
+import routerCategory from "./routes/category.routes";
 
 
 //crear la instancia de express
@@ -33,12 +34,4 @@ app.use(express.static("public"));
 //app.use(express.static(path.join(__dirname, "../public")))
 
 app.use("/apiSurveys", router);
-
-/* app.get("/", (req, res) => {
-  res.send("Esta es una prueba desde mi backend");
-});
-
-app.delete("/borrarProducto", (req, res) => {
-  res.send("Se borró el producto");
-});
- */
+app.use("/apiCategorys", routerCategory);

@@ -7,6 +7,7 @@ import {
   updateSurvey,
   deleteOne,
 } from "../controllers/surveys.controllers";
+
 //creamos la instancia del router
 
 const router = Router();
@@ -18,5 +19,7 @@ router
   .post(surveyValidate,createSurvey);
 
 router.route("/:id").get(getOne).put(updateSurvey).delete(deleteOne);
+
+
 
 export default router;

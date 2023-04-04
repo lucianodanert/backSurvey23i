@@ -29,8 +29,6 @@ const createSurvey = async (req, res) => {
     console.log(req.body);
     //validar
 
-    //crear un objeto para guardar en la BD
-
     const newSurvey = new Survey({
       /* surveyName: req.body.surveyName,
       category: req.body.category, */
