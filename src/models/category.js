@@ -3,9 +3,10 @@ import mongoose, { Schema } from "mongoose";
 const surveyCategory = new Schema({
     categoryName: {
       require: true,
+      unique: true,
       type: String,
       minlength: 2,
-      maxlength: 20,
+      maxlength: 50,
     },
     categoryStatus: {
       require: true,
