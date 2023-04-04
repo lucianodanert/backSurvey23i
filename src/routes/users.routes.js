@@ -7,7 +7,7 @@ const router = Router();
 
 router
   .route("/login")
-  .post(validateJWT, login)
+  .post([validateJWT, userValidations], login)
   
 router
   .route("/register")
