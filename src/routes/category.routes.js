@@ -1,6 +1,6 @@
 import { Router } from "express";
 import categoryValidate from "../middlewares/categoryValidations";
-import { createCategory, showCategorys, deleteOneCategory } from "../controllers/category.controllers";
+import { createCategory, showCategorys, deleteOneCategory, updateCategory,getOneCategory } from "../controllers/category.controllers";
 //creamos la instancia del router
 
 const routerCategory = Router();
@@ -12,6 +12,8 @@ routerCategory
   .post(categoryValidate, createCategory)
 routerCategory
   .route("/:id") 
-  .delete(deleteOneCategory); 
+  .delete(deleteOneCategory) 
+  .put(updateCategory)
+  .get(getOneCategory)
 
 export default routerCategory;

@@ -40,4 +40,24 @@ const createCategory = async (req, res) => {
       res.status(404).json({ message: "Error searching for requested Category" });
     }
   };
-  export {createCategory, showCategorys, deleteOneCategory}
+
+  const updateCategory = async (req, res) => {
+    try {
+      await Category.findByIdAndUpdate(req.params.id, req.body);
+      res.status(200).json({ message: "Survey Updated Succesfully" });
+    } catch (error) {
+      console.log(error);
+      res.status(404).json({ message: "Error searching for requested survey" });
+    }
+  };
+
+  const getOneCategory = async (req, res) => {
+    try {
+      const categoryFound = await Category.findById(req.params.id);
+      res.status(200).json(categoryFound);
+    } catch (error) {
+      console.log(error);
+      res.status(404).json({ message: "Error searching for requested category" });
+    }
+  };
+  export {createCategory, showCategorys, deleteOneCategory, updateCategory, getOneCategory}
