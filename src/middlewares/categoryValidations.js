@@ -5,7 +5,7 @@ const categoryValidate = [
   check("categoryName")
   .notEmpty()
   .withMessage("El nombre de la categoria es obligatorio")
-  .isLength({ min: 2, max: 100 }),
+  .isLength({ min: 1, max: 50 }),
 
   (req, res, next) => {
     validationsResult(req, res, next);

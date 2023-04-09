@@ -24,7 +24,7 @@ const showSurveys = async (req, res) => {
 };
 
 const createSurvey = async (req, res) => {
-  const { surveyName, category, status,surveyItemList,surveyAnswerList } = req.body;
+  const { surveyName, category,image, status,surveyItemList,surveyAnswerList } = req.body;
   try {
     console.log(req.body);
     //validar
@@ -34,6 +34,7 @@ const createSurvey = async (req, res) => {
       category: req.body.category, */
       surveyName,
       category,
+      image,
       status,
       surveyItemList,
       surveyAnswerList,
