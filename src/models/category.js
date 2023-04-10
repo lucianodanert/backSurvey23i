@@ -3,17 +3,20 @@ import mongoose, { Schema } from "mongoose";
 const surveyCategory = new Schema({
     categoryName: {
       require: true,
+      unique: true,
       type: String,
-      minlength: 5,
+      minlength: 2,
       maxlength: 50,
     },
-    status: {
+    categoryStatus: {
       require: true,
       type: Boolean,
       unique: false,
     },
   });
 
-const Category = mongoose.model("survey", surveySchema);
 
-export default Survey;
+const Category = mongoose.model("category", surveyCategory);
+
+export default Category;
+

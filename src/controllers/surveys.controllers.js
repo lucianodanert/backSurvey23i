@@ -24,18 +24,19 @@ const showSurveys = async (req, res) => {
 };
 
 const createSurvey = async (req, res) => {
-  const { surveyName, category, status,surveyItemList,surveyAnswerList } = req.body;
+
+  const { surveyName, category,image, status,surveyItemList,surveyAnswerList } = req.body;
+
   try {
     console.log(req.body);
     //validar
-
-    //crear un objeto para guardar en la BD
 
     const newSurvey = new Survey({
       /* surveyName: req.body.surveyName,
       category: req.body.category, */
       surveyName,
       category,
+      image,
       status,
       surveyItemList,
       surveyAnswerList,

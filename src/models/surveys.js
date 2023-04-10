@@ -15,6 +15,15 @@ const surveySchema = new Schema({
     maxlength: 100,
     unique: false,
   },
+
+  image: {
+    require: false,
+    type: String,
+    minlength: 5,
+    maxlength: 100,
+    unique: false,
+  },
+
   status: {
     require: true,
     type: Boolean,

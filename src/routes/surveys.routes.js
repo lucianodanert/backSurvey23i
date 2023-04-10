@@ -7,7 +7,9 @@ import {
   updateSurvey,
   deleteOne,
 } from "../controllers/surveys.controllers";
+
 import validateJWT from "../middlewares/jwtValidations";
+
 
 const router = Router();
 
@@ -16,10 +18,12 @@ router
   .get(showSurveys)
   .post([validateJWT, surveyValidate],createSurvey);
 
+
 router
 .route("/:id")
 .get(getOne)
 .put([validateJWT, surveyValidate],updateSurvey)
 .delete(validateJWT, deleteOne);
+
 
 export default router;

@@ -6,6 +6,8 @@ import "./database";
 import router from "./routes/surveys.routes";
 import auth from './routes/users.routes'
 import * as dotenv from 'dotenv'
+import routerCategory from "./routes/category.routes";
+
 
 const app = express();
 
@@ -28,5 +30,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../public")))
 
 app.use("/apiSurveys", router);
-app.use('/apiSurveys/auth', auth)
+app.use('/apiSurveys/auth', auth);
+app.use("/apiCategorys", routerCategory);
 
