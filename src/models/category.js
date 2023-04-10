@@ -15,6 +15,8 @@ const surveyCategory = new Schema({
     },
   });
 
+
 const Category = mongoose.model("category", surveyCategory);
 
 export default Category;
+
