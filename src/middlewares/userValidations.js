@@ -15,8 +15,8 @@ const userValidations = [
     check("password")
     .notEmpty()
     .withMessage("El password es obligatorio")
-    .isLength({ min: 8, max: 100 })
-    .withMessage("El password debe tener entre 8 y 20 caracteres"),
+    .isLength({ min: 8})
+    .withMessage("El password debe tener mas de 8 caracteres"),
     (req, res, next) => {
       validationsResult(req, res, next);
     },
