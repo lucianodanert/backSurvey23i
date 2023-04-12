@@ -1,11 +1,15 @@
 import mongoose from "mongoose";
-import * as dotenv from 'dotenv'
+import * as dotenv from 'dotenv';
+
+
 dotenv.config()
 
-const url = "mongodb://127.0.0.1:27017/test";
+/* const url = "mongodb://127.0.0.1:27017/test"; */
+/* const url = URL; */
 
-//mongoose.connect(process.env.URL);
-mongoose.connect(url);
+console.log(process.env.URL);
+mongoose.connect(process.env.URL);
+/* mongoose.connect(url); */
 
 const connection = mongoose.connection;
 

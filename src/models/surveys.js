@@ -20,7 +20,7 @@ const surveySchema = new Schema({
     require: false,
     type: String,
     minlength: 5,
-    maxlength: 100,
+    maxlength: 300,
     unique: false,
   },
 
