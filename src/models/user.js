@@ -25,7 +25,7 @@ const userSchema = new Schema({
     },
     role: {
         type: String,
-        default: 'user_role',
+        default: 'user',
     },
     estate: {
         type: Boolean,
