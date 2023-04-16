@@ -5,7 +5,7 @@ const userValidations = [
     check("username")
     .notEmpty()
     .withMessage("El nombre de usuario es obligatorio")
-    .isLength({ min: 6, max: 100 })
+    .isLength({ min: 4, max: 100 })
     .withMessage("El nombre de usuario debe tener entre 2 y 100 caracteres"),
     check("email")
     .notEmpty()
