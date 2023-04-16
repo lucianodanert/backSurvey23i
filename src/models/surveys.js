@@ -38,6 +38,11 @@ const surveySchema = new Schema({
     require: false,
     type: Array,
     unique: false,
+  },
+  author:{
+  require: true,
+    type: String,
+    unique: false,
   }
 });
 
