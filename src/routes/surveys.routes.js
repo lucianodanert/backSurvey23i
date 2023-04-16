@@ -15,7 +15,7 @@ const router = Router();
 
 router
   .route("/")
-  .get(showSurveys)
+  .get( validateJWT,showSurveys)
   .post([ validateJWT,  surveyValidate],createSurvey);
 
 
