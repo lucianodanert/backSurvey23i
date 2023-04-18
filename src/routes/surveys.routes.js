@@ -6,6 +6,7 @@ import {
   getOne,
   updateSurvey,
   deleteOne,
+  showActiveSurveys,
 } from "../controllers/surveys.controllers";
 
 import validateJWT from "../middlewares/jwtValidations";
@@ -15,9 +16,12 @@ const router = Router();
 
 router
   .route("/")
-  .get( validateJWT,showSurveys)
+  .get(validateJWT, showSurveys)
   .post([ validateJWT,  surveyValidate],createSurvey);
 
+
+router
+.route("/showActive").get(showActiveSurveys);
 
 router
 .route("/:id")
