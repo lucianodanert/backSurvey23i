@@ -16,21 +16,39 @@ const showSurveys = async (req, res) => {
   try {
     
 
-      const surveyList = await Survey.find();
-      res.status(200).json(surveyList);  
+    const userLogged = await User.findOne({ email: req.email }).exec();
+    console.log(userLogged.role);
 
-/* 
-    res.status(200).json(surveyList); */
+    if (userLogged.role == "admin") {
+      const surveyList = await Survey.find(); 
+      res.status(200).json( { userLogged : userLogged.role , surveyList}); 
+    } else if (userLogged.role == "user") {
+      const surveyList = await Survey.find({ author: req.email }).exec();
+      res.status(200).json({ userLogged : userLogged.role , surveyList});
+    } 
+
   } catch (error) {
-    console.log(error);
+    console.log(error);  
     res 
       .status(404)
       .json({ message: "Error al buscar los productos solicitados" });
   }
 };
 
+const showActiveSurveys = async (req, res) => {
+  try {
+    
+      const surveyList = await Survey.find({ status: true }).exec();
+      res.status(200).json(surveyList);
+    } 
 
-
+   catch (error) {
+    console.log(error);  
+    res 
+      .status(404)
+      .json({ message: "Error al buscar los productos solicitados" });
+  }
+};
 
 
 const createSurvey = async (req, res) => {
@@ -87,4 +105,4 @@ const deleteOne = async (req, res) => {
     res.status(404).json({ message: "Error searching for requested survey" });
   }
 };
-export { showSurveys, createSurvey, getOne, updateSurvey, deleteOne };
+export { showSurveys, createSurvey, getOne, updateSurvey, deleteOne, showActiveSurveys };
