@@ -15,7 +15,9 @@
 ## ✨ [Demo](https://)
 <br>
 
-### 🌟 [Deploy del backend en Render con BD en MongoDB Atlas](https://crudburgersc23i.onrender.com/ )
+
+### 🌟 [Deploy del backend en Render con BD en MongoDB Atlas](https://backsurveys23i.onrender.com// )
+
 <br>
 
 ## Comandos
@@ -40,6 +42,8 @@ npm run dev
 - mongoose
 - morgan
 - nodemon
+- chartjs
+
 
 <hr>
 
